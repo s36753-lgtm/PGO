@@ -12,7 +12,7 @@ public class Reader {
     }
 
     public void printData() {
-        System.out.println(this.firstName + ", " + this.lastName + ", " + this.cardNumber + ", " + this.borrowedCount);
+        System.out.println(this.firstName + " " + this.lastName + ", " + this.cardNumber + ", " + this.borrowedCount);
     }
 
     public void increaseBorrowedCount() {

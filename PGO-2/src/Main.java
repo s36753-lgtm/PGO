@@ -12,6 +12,17 @@ public class Main {
         reader1.printData();
         reader1.decreaseBorrowedCount();
         reader1.increaseBorrowedCount();
+
+        int capacity = 3;
+        Library books = new Library(capacity);
+
+        books.addBook(book1);
+        books.addBook(book2);
+        books.addBook(book3);
+
+        books.findBookByTitle("The Memory Police");
+        System.out.println(books.countAvailableBooks());
+        books.printAvailableBooks();
     }
 }
 

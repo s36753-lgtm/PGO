@@ -15,6 +15,14 @@ public class Book {
             System.out.println(this.title + ", " + this.author + ", " + this.pageCount + ", " + this.available);
         }
 
+        public String getTitle() {
+            return title;
+        }
+
+        public boolean getAvailable() {
+            return available;
+        }
+
         public void borrow() {
             if (this.available) {
                 this.available = false;
