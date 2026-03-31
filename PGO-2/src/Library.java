@@ -15,10 +15,19 @@ public class Library {
     }
 
     public void findBookByTitle(String title) {
+        boolean found = false;
+
         for (int i = 0; i < bookCount; i++) {
             if (books[i].getTitle().equals(title)) {
                 books[i].printInfo();
+
+                found = true;
+
             }
+        }
+
+        if (!found) {
+            System.out.print("The library doesn't have this book");
         }
     }
 
@@ -37,6 +46,31 @@ public class Library {
         for (int i = 0; i < bookCount; i++) {
             if (books[i].getAvailable()) {
                 books[i].printInfo();
+            }
+        }
+    }
+
+    public void printAllBooks() {
+        for (int i = 0; i < bookCount; i++) {
+            books[i].printInfo();
+        }
+    }
+
+
+    public void borrowBook(String title, Reader reader) {
+        for (int i = 0; i < bookCount; i++) {
+            if (books[i].getTitle().equals(title)) {
+                books[i].borrow();
+                reader.increaseBorrowedCount();
+            }
+        }
+    }
+
+    public void returnedBook(String title, Reader reader) {
+        for (int i =0; i < bookCount; i++) {
+            if (books[i].getTitle().equals(title)) {
+                books[i].returnBook();
+                reader.decreaseBorrowedCount();
             }
         }
     }
